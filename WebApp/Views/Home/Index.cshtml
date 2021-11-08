@@ -1,0 +1,40 @@
+﻿@model OTPViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="wrapper">
+    @using (Html.BeginForm("SendMail", "Home", FormMethod.Post))
+    {
+        <div class="field">
+            <label class="label">Ad Soyad</label>
+            <div class="control has-icons-left has-icons-right">
+                @Html.TextBoxFor(model => model.FullName)
+                <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Telefon</label>
+            <div class="control has-icons-left has-icons-right">
+                @Html.TextBoxFor(model => model.Phone)
+                <span class="icon is-small is-left">
+                    <i class="fas fa-phone"></i>
+                </span>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Eposta</label>
+            <div class="control has-icons-left has-icons-right">
+                @Html.TextBoxFor(model => model.Email)
+                <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+            </div>
+        </div>
+        <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+    }
+</div>
+
+

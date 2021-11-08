@@ -1,0 +1,15 @@
+﻿@model OTPViewModel
+@{
+    ViewData["Title"] = "LoggedIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper">
+    <h1>Logged in successfully</h1>
+    @Model.Email
+    @Model.FullName
+    @Model.Phone
+    @Model.OneTimePasswordGenerated
+    @Model.OneTimePasswordFromUser
+</div>
+

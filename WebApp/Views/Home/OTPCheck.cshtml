@@ -1,0 +1,29 @@
+﻿@model OTPViewModel
+@{
+    ViewData["Title"] = "OTPCheck";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="wrapper">
+    @using (Html.BeginForm("Submit", "Home", FormMethod.Post))
+    {
+        <div class="field">
+            <label class="label">One Time Password</label>
+            <div class="control has-icons-left has-icons-right">
+                @Html.TextBoxFor(model => model.OneTimePasswordFromUser)
+                <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+            </div>
+        </div>
+        @Html.HiddenFor(m=>m.Email)
+        @Html.HiddenFor(m=>m.FullName)
+        @Html.HiddenFor(m=>m.Phone)
+        @Html.HiddenFor(m=>m.OneTimePasswordGenerated)
+        <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+    }
+    </div>
+
+
+
